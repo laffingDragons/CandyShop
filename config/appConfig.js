@@ -15,4 +15,5 @@ module.exports = {
     enviornment: appConfig.env,
     db: appConfig.db,
     apiVersion: appConfig.apiVersion,
+    
 }
