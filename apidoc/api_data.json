@@ -1,0 +1,596 @@
+[
+  {
+    "type": "post",
+    "url": "/api/v1/cart/create",
+    "title": "Create Cart",
+    "version": "0.0.1",
+    "group": "create",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t\t\"error\": false,\n\t\t\"message\": \"Cart Created successfully\",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"products\": object(type = array),\n\t\t\t\t\t\t\"cartId\":\"String\"\n\t\t\t\t\t}\n\t\t\t]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/cart.js",
+    "groupTitle": "create",
+    "name": "PostApiV1CartCreate"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/products/create",
+    "title": "Create product",
+    "version": "0.0.1",
+    "group": "create",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "shortDescription",
+            "description": "<p>shortDescription of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longDescription",
+            "description": "<p>longDescription of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "originalPrice",
+            "description": "<p>originalPrice of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "discountedPrice",
+            "description": "<p>discountedPrice of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "ratings",
+            "description": "<p>ratings of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "quantity",
+            "description": "<p>quantity of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>category of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mainImage",
+            "description": "<p>mainImage of the product passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isFeatured",
+            "description": "<p>isFeatured of the product passed as a body parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   \n  {\n\t\t\"error\": false,\n\t\t\"message\": \"Product  created successfully \",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"name\": \"String\",\n\t\t\t\t\t\t\"shortDescription\": \"String\",\n\t\t\t\t\t\t\"longDescription\": \"String\",\n\t\t\t\t\t\t\"originalPrice\": \"Number\",\n\t\t\t\t\t\t\"discountedPrice\": \"Number\",\n\t\t\t\t\t\t\"ratings\": \"Number\",\n\t\t\t\t\t\t\"quantity\": \"Number\",\n\t\t\t\t\t\t\"reviews\": object(type = array),\n\t\t\t\t\t\t\"category\": \"String\",\n\t\t\t\t\t\t\"mainImage\": \"String\",\n\t\t\t\t\t\t\"images\":object(type = array),\n\t\t\t\t\t\t\"isFeatured\": \"Boolean\",\n\t\t\t\t\t\t\"productId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t},\n\t\t\t\t]\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": true,\n  \"message\": \"Error Occured.,\n  \"status\": 500,\n  \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/products.js",
+    "groupTitle": "create",
+    "name": "PostApiV1ProductsCreate"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/users/create",
+    "title": "Create user",
+    "version": "0.0.1",
+    "group": "create",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>firstName of the user passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>lastName of the user passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the user passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address of the user passed as a body parameter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "phoneNumber",
+            "description": "<p>phoneNumber of the user passed as a body parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t\t\"error\": false,\n\t\t\"message\": \"User Created Successfully\",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"firstName\": \"String\",\n\t\t\t\t\t\t\"lastName\": \"String\",\n\t\t\t\t\t\t\"email\": \"String\",\n\t\t\t\t\t\t\"password\": \"String\",\n\t\t\t\t\t\t\"address\": \"String\",\n\t\t\t\t\t\t\"phoneNumber\": \"Number\",\n\t\t\t\t\t\t\"userId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": true,\n  \"message\": \"Error Occured.,\n  \"status\": 500,\n  \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/user.js",
+    "groupTitle": "create",
+    "name": "PostApiV1UsersCreate"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/cart/:cartId/delete",
+    "title": "Delete cart by cartId",
+    "version": "0.0.1",
+    "group": "delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "cartId",
+            "description": "<p>cartId of the cart passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t    \"error\": false,\n\t    \"message\": \"Cart Deleted Successfully\",\n\t    \"status\": 200,\n\t    \"data\": []\n\t\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n\n {\n \t\"error\": true,\n    \"message\": \"Error Occured.\",\n    \"status\": 500,\n\t\"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/cart.js",
+    "groupTitle": "delete",
+    "name": "PostApiV1CartCartidDelete"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/products/:productId/delete",
+    "title": "Delete product by productId",
+    "version": "0.0.1",
+    "group": "delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productId",
+            "description": "<p>productId of the product passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   \n  {\n    \"error\": false,\n    \"message\": \"Product Deleted Successfully\",\n    \"status\": 200,\n    \"data\": []\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": true,\n  \"message\": \"Error Occured.,\n  \"status\": 500,\n  \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/products.js",
+    "groupTitle": "delete",
+    "name": "PostApiV1ProductsProductidDelete"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/users/:userId/delete",
+    "title": "Delete user by userId",
+    "version": "0.0.1",
+    "group": "delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   \n  {\n    \"error\": false,\n    \"message\": \"User Deleted Successfully\",\n    \"status\": 200,\n    \"data\": []\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": true,\n  \"message\": \"Error Occured.,\n  \"status\": 500,\n  \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/user.js",
+    "groupTitle": "delete",
+    "name": "PostApiV1UsersUseridDelete"
+  },
+  {
+    "type": "put",
+    "url": "/api/v1/cart/:cartId/edit",
+    "title": "Edit cart by cartId",
+    "version": "0.0.1",
+    "group": "edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "cartId",
+            "description": "<p>cartId of the cart passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\t{\n\t    \"error\": false,\n\t    \"message\": \"Cart Edited Successfully.\",\n\t    \"status\": 200,\n\t    \"data\": [\n\t\t   {\n                       \"carts\": object(type = array),\n                       \"cartId\":\"String\"\n                    }\n\t    \t  ]\n\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n \"error\": true,\n \"message\": \"Error Occured.,\n \"status\": 500,\n \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/cart.js",
+    "groupTitle": "edit",
+    "name": "PutApiV1CartCartidEdit"
+  },
+  {
+    "type": "put",
+    "url": "/api/v1/products/:productId/edit",
+    "title": "Edit product by productId",
+    "version": "0.0.1",
+    "group": "edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productId",
+            "description": "<p>productId of the product passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   \n  {\n\t\t\"error\": false,\n\t\t\"message\": \"Product  updated successfully \",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"name\": \"String\",\n\t\t\t\t\t\t\"shortDescription\": \"String\",\n\t\t\t\t\t\t\"longDescription\": \"String\",\n\t\t\t\t\t\t\"originalPrice\": \"Number\",\n\t\t\t\t\t\t\"discountedPrice\": \"Number\",\n\t\t\t\t\t\t\"ratings\": \"Number\",\n\t\t\t\t\t\t\"quantity\": \"Number\",\n\t\t\t\t\t\t\"reviews\": object(type = array),\n\t\t\t\t\t\t\"category\": \"String\",\n\t\t\t\t\t\t\"mainImage\": \"String\",\n\t\t\t\t\t\t\"images\":object(type = array),\n\t\t\t\t\t\t\"isFeatured\": \"Boolean\",\n\t\t\t\t\t\t\"productId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t}\n\t\t\t\t]\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": true,\n  \"message\": \"Error Occured.,\n  \"status\": 500,\n  \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/products.js",
+    "groupTitle": "edit",
+    "name": "PutApiV1ProductsProductidEdit"
+  },
+  {
+    "type": "put",
+    "url": "/api/v1/users/:userId/edit",
+    "title": "Edit user by userId",
+    "version": "0.0.1",
+    "group": "edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user passed as the URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t\t\"error\": false,\n\t\t\"message\": \"User updated successfully\",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"firstName\": \"String\",\n\t\t\t\t\t\t\"lastName\": \"String\",\n\t\t\t\t\t\t\"email\": \"String\",\n\t\t\t\t\t\t\"password\": \"String\",\n\t\t\t\t\t\t\"address\": \"String\",\n\t\t\t\t\t\t\"phoneNumber\": \"Number\",\n\t\t\t\t\t\t\"userId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": true,\n  \"message\": \"Error Occured.,\n  \"status\": 500,\n  \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/user.js",
+    "groupTitle": "edit",
+    "name": "PutApiV1UsersUseridEdit"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/cart/all",
+    "title": "Get all cart",
+    "version": "0.0.1",
+    "group": "read",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   {\n    \"error\": false,\n    \"message\": \"Cart found Successfully\",\n    \"status\": 200,\n    \"data\": [\n\t\t\t{\n\t\t\t\t\"products\": object(type = array),\n\t\t\t\t\"cartId\":\"String\"\n\t\t\t}\n    \t    ]\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Failed To Find Cart Details\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/cart.js",
+    "groupTitle": "read",
+    "name": "GetApiV1CartAll"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/products/all",
+    "title": "Get all products",
+    "version": "0.0.1",
+    "group": "read",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   \n  {\n\t\t\"error\": false,\n\t\t\"message\": \"Products found successfully \",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"name\": \"String\",\n\t\t\t\t\t\t\"shortDescription\": \"String\",\n\t\t\t\t\t\t\"longDescription\": \"String\",\n\t\t\t\t\t\t\"originalPrice\": \"Number\",\n\t\t\t\t\t\t\"discountedPrice\": \"Number\",\n\t\t\t\t\t\t\"ratings\": \"Number\",\n\t\t\t\t\t\t\"quantity\": \"Number\",\n\t\t\t\t\t\t\"reviews\": object(type = array),\n\t\t\t\t\t\t\"category\": \"String\",\n\t\t\t\t\t\t\"mainImage\": \"String\",\n\t\t\t\t\t\t\"images\":object(type = array),\n\t\t\t\t\t\t\"isFeatured\": \"Boolean\",\n\t\t\t\t\t\t\"productId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t},\n\t\t\t\t]\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Failed To Find Product Details\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/products.js",
+    "groupTitle": "read",
+    "name": "GetApiV1ProductsAll"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/products/view/:productId",
+    "title": "Get Single Products",
+    "version": "0.0.1",
+    "group": "read",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   \n  {\n\t\t\"error\": false,\n\t\t\"message\": \"Product found\",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"name\": \"String\",\n\t\t\t\t\t\t\"shortDescription\": \"String\",\n\t\t\t\t\t\t\"longDescription\": \"String\",\n\t\t\t\t\t\t\"originalPrice\": \"Number\",\n\t\t\t\t\t\t\"discountedPrice\": \"Number\",\n\t\t\t\t\t\t\"ratings\": \"Number\",\n\t\t\t\t\t\t\"quantity\": \"Number\",\n\t\t\t\t\t\t\"reviews\": object(type = array),\n\t\t\t\t\t\t\"category\": \"String\",\n\t\t\t\t\t\t\"mainImage\": \"String\",\n\t\t\t\t\t\t\"images\":object(type = array),\n\t\t\t\t\t\t\"isFeatured\": \"Boolean\",\n\t\t\t\t\t\t\"productId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t},\n\t\t\t\t]\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/products.js",
+    "groupTitle": "read",
+    "name": "GetApiV1ProductsViewProductid"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/users/all",
+    "title": "Get all users",
+    "version": "0.0.1",
+    "group": "read",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t\t\"error\": false,\n\t\t\"message\": \"Users found Successfully\",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"firstName\": \"String\",\n\t\t\t\t\t\t\"lastName\": \"String\",\n\t\t\t\t\t\t\"email\": \"String\",\n\t\t\t\t\t\t\"password\": \"String\",\n\t\t\t\t\t\t\"address\": \"String\",\n\t\t\t\t\t\t\"phoneNumber\": \"Number\",\n\t\t\t\t\t\t\"userId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Failed To Find user Details\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/user.js",
+    "groupTitle": "read",
+    "name": "GetApiV1UsersAll"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/users/view/:userId",
+    "title": "Get Single User",
+    "version": "0.0.1",
+    "group": "read",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n\t\t\"error\": false,\n\t\t\"message\": \"User found Successfully\",\n\t\t\"status\": 200,\n\t\t\"data\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"firstName\": \"String\",\n\t\t\t\t\t\t\"lastName\": \"String\",\n\t\t\t\t\t\t\"email\": \"String\",\n\t\t\t\t\t\t\"password\": \"String\",\n\t\t\t\t\t\t\"address\": \"String\",\n\t\t\t\t\t\t\"phoneNumber\": \"Number\",\n\t\t\t\t\t\t\"userId\": \"String\",\n\t\t\t\t\t\t\"created\": \"Date\",\n\t\t\t\t\t\t\"lastModified\": \"Date\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n\t    \"error\": true,\n\t    \"message\": \"Error Occured.\",\n\t    \"status\": 500,\n\t    \"data\": null\n\t   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/user.js",
+    "groupTitle": "read",
+    "name": "GetApiV1UsersViewUserid"
+  }
+]

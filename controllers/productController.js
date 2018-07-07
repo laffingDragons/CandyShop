@@ -23,14 +23,14 @@ let getAllProducts = (req, res) => {
             
         }else if(check.isEmpty(result)){
 
-            logger.info('Product not found', 'ProductController: getAllProducts', 5);
+            logger.info('Products not found', 'ProductController: getAllProducts', 5);
             let apiResponse = response.generate(true, "Product Not Found", 404, null);
             res.send(apiResponse);
             
         }else{
 
-            logger.info('Product found Successfully', 'ProductController: getAllProducts', 5);
-            let apiResponse = response.generate(false, "Product found Successfully", 200, result);
+            logger.info('Products found Successfully', 'ProductController: getAllProducts', 5);
+            let apiResponse = response.generate(false, "Products found Successfully", 200, result);
             res.send(apiResponse);
 
         }
@@ -105,7 +105,7 @@ let createProduct = (req, res) => {
 
         }else{
 
-            logger.info('Product found Successfully', 'ProductController: createProductId', 5);
+            logger.info('Product Created Successfully', 'ProductController: createProductId', 5);
             let apiResponse = response.generate(false, "Product Created successfully!", 200, result);
             res.send(apiResponse);
 
@@ -117,6 +117,10 @@ let createProduct = (req, res) => {
 
 // Function  to edit Product
 let editProduct = (req, res) => {
+
+    let images = (req.body.images != undefined && req.body.images != null && req.body.images != '') ? req.body.images.split(',') : []
+
+    req.body.images = images;
 
     let options = req.body;
     

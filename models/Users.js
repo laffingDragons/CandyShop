@@ -12,7 +12,6 @@ let userSchema = new Schema({
     password: { type: String, default: '' },
     address: { type: String, default: '' },
     phoneNumber: { type: Number, default: 0 },
-    Productreviewed: [{type: String, ref: 'Products'}],
     created: { type: Date, default: moment.now },
     lastModified: { type: Date, default: moment.now },
 

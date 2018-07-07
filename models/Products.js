@@ -13,7 +13,6 @@ let productSchema = new Schema({
     discountedPrice: { type: Number, default: 0 },
     ratings: { type: Number, default: 0 },
     quantity: { type: Number, default: 0 },
-    reviews: [{type: String, ref: 'Users'}],
     category: { type: String, default: '' },
     mainImage: { type: String, default: '' },
     images: [],

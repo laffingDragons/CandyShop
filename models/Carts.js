@@ -5,9 +5,8 @@ const Schema = mongoose.Schema;
 
 let cartSchema = new Schema({
 
-    userId: { type: String, ref: 'Users' },
-    productId: { type: String, ref: 'Products' },
-    productCount: {type: Number, default: 1 },
+    cartId: {type:String, uniq:true},
+    products: [],
 
 })
 

@@ -29,8 +29,8 @@ let getAllUsers = (req, res) => {
             
         }else{
 
-            logger.info('User found Successfully', 'UserController: getAllUsers', 5);
-            let apiResponse = response.generate(false, "User found Successfully", 200, result);
+            logger.info('Users found Successfully', 'UserController: getAllUsers', 5);
+            let apiResponse = response.generate(false, "Users found Successfully", 200, result);
             res.send(apiResponse);
 
         }
@@ -99,7 +99,7 @@ let createUser = (req, res) => {
         }else{
 
             logger.info('User found Successfully', 'UserController: createUserId', 5);
-            let apiResponse = response.generate(false, "User Created successfully!", 200, result);
+            let apiResponse = response.generate(false, "User Created Successfully", 200, result);
             res.send(apiResponse);
 
         }
@@ -108,10 +108,69 @@ let createUser = (req, res) => {
 
 }//end of User create function
 
+// Function  to edit User
+let editUser = (req, res) => {
+
+    let options = req.body;
+    
+    UserModel.update({'userId': req.params.userId}, options, {multi: true}).exec((err, result) => {
+
+        if(err){
+
+            logger.error(`Error Ocurred: ${err}`, 'Database', 10);
+            let apiResponse = response.generate(true, "Error Occured", 500, null);
+            res.send(apiResponse);
+
+        }else if(check.isEmpty(result)){
+
+            logger.info('User not found', 'UserController: editUser', 5);
+            let apiResponse = response.generate(true, "User Not Found", 404, null);
+            res.send(apiResponse);
+            
+        }else{
+
+            logger.info('User updated successfully', 'UserController: editUser', 5);
+            let apiResponse = response.generate(false, "User updated successfully" , 200, result);
+            res.send(apiResponse);
+
+        }
+    })
+}//end of edit User
+
+   /**
+ * function to delete the assignment collection.
+ */
+let deleteUser = (req, res) => {
+    UserModel.remove({ 'userId': req.params.userId }, (err, result) => {
+        if (err) {
+
+            logger.error(`Error Ocurred: ${err}`, 'Database', 10);
+            let apiResponse = response.generate(true, "Error Occured", 500, null);
+            res.send(apiResponse);
+
+        } else if (check.isEmpty(result)) {
+
+            logger.info('User not found', 'UserController: deleteUser', 5);
+            let apiResponse = response.generate(true, "User Not Found", 404, null);
+            res.send(apiResponse);
+
+        } else {
+
+            logger.info('User found Successfully', 'UserController: deleteUser', 5);
+            let apiResponse = response.generate(false, "User Deleted successfully" , 200, result);
+            res.send(apiResponse);
+
+        }
+    })
+}//end of delete function
+
+
 module.exports = {
 
     getAllUsers: getAllUsers,
     viewByUserId:viewByUserId,
     createUser: createUser,
+    deleteUser:deleteUser,
+    editUser: editUser
 
 }
