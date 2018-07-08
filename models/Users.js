@@ -8,7 +8,7 @@ let userSchema = new Schema({
     userId: { type: String, unique: true },
     firstName: { type: String, default: '', required: true },
     lastName: { type: String, default: '', required: true },
-    email: { type: String, default: '' },
+    email: { type: String, unique: true },
     password: { type: String, default: '' },
     address: { type: String, default: '' },
     phoneNumber: { type: Number, default: 0 },
