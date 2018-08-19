@@ -3,13 +3,13 @@ define({
   "version": "0.0.1",
   "description": "Documentation for the Ecommerce Application",
   "title": "Ecommerce APIs",
-  "url": "http://localhost:3000",
+  "url": "http://node-basic.akshaypatil.online",
   "sampleUrl": false,
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-07-07T17:43:59.600Z",
+    "time": "2018-08-19T12:53:55.477Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
